@@ -17,9 +17,7 @@ MainWindow::MainWindow(QWidget *parent)
 
     ui->groupBox->setParent(nullptr);
 
-    horizontalLayout->addStretch();
     horizontalLayout->addWidget(ui->groupBox);
-    horizontalLayout->addStretch();
 
     mainLayout->addLayout(horizontalLayout);
 
@@ -65,7 +63,8 @@ MainWindow::MainWindow(QWidget *parent)
 
     // Login Label
     ui->loginLabel->setText(QString::fromUtf8("Đăng Nhập"));
-    ui->loginLabel->setStyleSheet(QString("color: %1; font-size: 18px; font-weight: bold;").arg(textColor));
+    ui->loginLabel->setStyleSheet(QString("color: %1; font-size: 38px; font-weight: bold;").arg(textColor));
+    ui->loginLabel->setAlignment(Qt::AlignHCenter);
 
     // Username LineEdit
     ui->usernameLineEdit->setPlaceholderText("Tài Khoản");
@@ -86,6 +85,7 @@ MainWindow::MainWindow(QWidget *parent)
     // Status Label
     ui->statusLabel->setVisible(false);
     ui->statusLabel->setStyleSheet(QString("font-size: 14px; font-weight: bold;"));
+    ui->statusLabel->setAlignment(Qt::AlignCenter);
 }
 
 MainWindow::~MainWindow()
@@ -102,16 +102,14 @@ void MainWindow::on_loginButton_clicked()
 
     if(username == "test" && password == "test")
     {
-//        ui->statusLabel->clear();
-//        ui->statusLabel->setVisible(false);
         ui->statusLabel->setVisible(true);
         ui->statusLabel->setStyleSheet(QString("color: %1;").arg(successColor));
-        ui->statusLabel->setText("Đăng nhập thành công!");
+        ui->statusLabel->setText("Đăng nhập thành công.");
     }
     else
     {
         ui->statusLabel->setVisible(true);
         ui->statusLabel->setStyleSheet(QString("color: %1;").arg(errorColor));
-        ui->statusLabel->setText("Đăng nhập thất bại!");
+        ui->statusLabel->setText("Đăng nhập thất bại.");
     }
 }
