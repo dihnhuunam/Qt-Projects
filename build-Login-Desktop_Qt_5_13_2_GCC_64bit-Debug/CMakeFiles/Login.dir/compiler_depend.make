@@ -730,7 +730,6 @@ CMakeFiles/Login.dir/mainwindow.cpp.o: /home/dihnhuunam/Workspace/Qt-Tutorial/Lo
   /home/dihnhuunam/Qt5.13.2/5.13.2/gcc_64/include/QtGui/qtransform.h \
   /home/dihnhuunam/Qt5.13.2/5.13.2/gcc_64/include/QtGui/qwindowdefs.h \
   /home/dihnhuunam/Qt5.13.2/5.13.2/gcc_64/include/QtWidgets/QApplication \
-  /home/dihnhuunam/Qt5.13.2/5.13.2/gcc_64/include/QtWidgets/QCheckBox \
   /home/dihnhuunam/Qt5.13.2/5.13.2/gcc_64/include/QtWidgets/QGroupBox \
   /home/dihnhuunam/Qt5.13.2/5.13.2/gcc_64/include/QtWidgets/QHBoxLayout \
   /home/dihnhuunam/Qt5.13.2/5.13.2/gcc_64/include/QtWidgets/QLabel \
@@ -744,7 +743,6 @@ CMakeFiles/Login.dir/mainwindow.cpp.o: /home/dihnhuunam/Workspace/Qt-Tutorial/Lo
   /home/dihnhuunam/Qt5.13.2/5.13.2/gcc_64/include/QtWidgets/qabstractbutton.h \
   /home/dihnhuunam/Qt5.13.2/5.13.2/gcc_64/include/QtWidgets/qapplication.h \
   /home/dihnhuunam/Qt5.13.2/5.13.2/gcc_64/include/QtWidgets/qboxlayout.h \
-  /home/dihnhuunam/Qt5.13.2/5.13.2/gcc_64/include/QtWidgets/qcheckbox.h \
   /home/dihnhuunam/Qt5.13.2/5.13.2/gcc_64/include/QtWidgets/qdialog.h \
   /home/dihnhuunam/Qt5.13.2/5.13.2/gcc_64/include/QtWidgets/qframe.h \
   /home/dihnhuunam/Qt5.13.2/5.13.2/gcc_64/include/QtWidgets/qgridlayout.h \
@@ -993,8 +991,6 @@ Login_autogen/include/ui_mainwindow.h:
 
 /home/dihnhuunam/Qt5.13.2/5.13.2/gcc_64/include/QtWidgets/qgridlayout.h:
 
-/home/dihnhuunam/Qt5.13.2/5.13.2/gcc_64/include/QtWidgets/qcheckbox.h:
-
 /home/dihnhuunam/Qt5.13.2/5.13.2/gcc_64/include/QtWidgets/qboxlayout.h:
 
 /home/dihnhuunam/Qt5.13.2/5.13.2/gcc_64/include/QtWidgets/QWidget:
@@ -1096,8 +1092,6 @@ Login_autogen/include/ui_mainwindow.h:
 /usr/include/x86_64-linux-gnu/bits/types/__FILE.h:
 
 /usr/include/x86_64-linux-gnu/bits/types/FILE.h:
-
-/home/dihnhuunam/Qt5.13.2/5.13.2/gcc_64/include/QtWidgets/QCheckBox:
 
 /usr/include/x86_64-linux-gnu/bits/time64.h:
 

@@ -4,7 +4,6 @@
 #include <QMessageBox>
 #include <QVBoxLayout>
 #include <QHBoxLayout>
-#include <QSpacerItem>
 
 MainWindow::MainWindow(QWidget *parent)
     : QMainWindow(parent)
@@ -12,82 +11,81 @@ MainWindow::MainWindow(QWidget *parent)
 {
     ui->setupUi(this);
 
-    // Create main vertical layout for central widget
-    QVBoxLayout* mainLayout = new QVBoxLayout();
+    // Layout
+    QVBoxLayout *mainLayout = new QVBoxLayout();
+    QHBoxLayout *horizontalLayout = new QHBoxLayout();
 
-    // Create horizontal layout for center alignment
-    QHBoxLayout* horizontalLayout = new QHBoxLayout();
-
-    // Remove groupBox from its parent
     ui->groupBox->setParent(nullptr);
 
-    // Add stretching spacers on both sides of the groupBox
     horizontalLayout->addStretch();
     horizontalLayout->addWidget(ui->groupBox);
     horizontalLayout->addStretch();
 
-    // Add the horizontal layout to main layout
     mainLayout->addLayout(horizontalLayout);
 
-    // Set the layout to central widget
-    QWidget* centralWidget = new QWidget(this);
+    QWidget *centralWidget = new QWidget(this);
     centralWidget->setLayout(mainLayout);
     setCentralWidget(centralWidget);
 
-    // Dark mode colors with refined shades of gray
-    QString darkBackground = "#2B2B2B";     // Dark gray background, slightly lighter
-    QString darkSecondary = "#3B3B3B";      // Slightly lighter gray for UI elements
-    QString darkBorder = "#555555";         // Medium gray for borders
-    QString textColor = "#D3D3D3";          // Light gray for text
-    QString accentColor = "#6E6E6E";        // Slightly brighter accent color for hover
-    QString pressedColor = "#5A5A5A";       // Darker gray for pressed buttons
+    // Dark theme colors
+    QString darkBackground = "#2B2B2B";
+    QString secondaryBackground = "#3C3C3C";
+    QString borderColor = "#5E5E5E";
+    QString textColor = "#E0E0E0";
+    QString hoverColor = "#4E4E4E";
+    QString pressedColor = "#626262";
 
-    // Main window and groupBox style
-    this->setStyleSheet(QString::fromUtf8(
-        "QMainWindow, QWidget { background-color: %1; color: %2; }"
-        "QGroupBox { border: 2px solid %3; border-radius: 10px; margin-top: 1em; }"
-        "QGroupBox::title { color: %2; }"
-    ).arg(darkBackground, textColor, darkBorder));
-
-    // StyleSheet for Button
-    QString buttonStyle = QString::fromUtf8(
-        "QPushButton {"
-        "  border: 2px solid %1;"
-        "  border-radius: 10px;"
-        "  background-color: %2;"
-        "  color: %3;"
-        "  padding: 3px;"
-        "}"
-        "QPushButton:hover {"
-        "  background-color: %4;"
-        "}"
-        "QPushButton:pressed {"
-        "  background-color: %5;"
-        "  color: %3;"
-        "}"
-    ).arg(darkBorder, darkSecondary, textColor, accentColor, pressedColor);
+    // Set main window background
+    this->setStyleSheet(QString("background-color: %1;").arg(darkBackground));
 
     // StyleSheet for QLineEdit
-    QString lineStyle = QString::fromUtf8(
-        "QLineEdit {"
-        "  border: 1px solid %1;"
-        "  border-radius: 10px;"
-        "  padding: 3px;"
-        "  background-color: %2;"
-        "  color: %3;"
-        "}"
-        "QLineEdit:focus {"
-        "  border: 2px solid %4;"
-        "}"
-    ).arg(darkBorder, darkSecondary, textColor, accentColor);
+    QString lineStyle = QString::fromUtf8("QLineEdit {"
+                                                "background-color: %1;"
+                                                "color: %3;"
+                                                "border: 1px solid %2;"
+                                                "border-radius: 8px;"
+                                                "padding: 6px;"
+                                                "}").arg(secondaryBackground, borderColor, textColor);
 
-    // Apply styles
+    // StyleSheet for QPushButton
+    QString buttonStyle = QString::fromUtf8(
+                "QPushButton {"
+                    "background-color: %1;"
+                    "color: %5;"
+                    "border: 1px solid %2;"
+                    "border-radius: 8px;"
+                    "padding: 6px;"
+                    "}"
+                "QPushButton:hover {"
+                    "background-color: %3;"
+                    "}"
+                "QPushButton:pressed {"
+                    "background-color: %4;"
+                    "}").arg(secondaryBackground, borderColor, hoverColor, pressedColor, textColor);
+
+    // Login Label
+    ui->loginLabel->setText(QString::fromUtf8("Đăng Nhập"));
+    ui->loginLabel->setStyleSheet(QString("color: %1; font-size: 18px; font-weight: bold;").arg(textColor));
+
+    // Username LineEdit
+    ui->usernameLineEdit->setPlaceholderText("Tài Khoản");
+    ui->usernameLineEdit->setAlignment(Qt::AlignLeft);
     ui->usernameLineEdit->setStyleSheet(lineStyle);
-    ui->passwordLineEdit->setStyleSheet(lineStyle);
-    ui->loginButton->setStyleSheet(buttonStyle);
-    ui->forgotPasswordButton->setStyleSheet(buttonStyle);
-    ui->registerButton->setStyleSheet(buttonStyle);
+    ui->usernameLineEdit->setFocus();
 
+    // Password LineEdit
+    ui->passwordLineEdit->setPlaceholderText("Mật Khẩu");
+    ui->usernameLineEdit->setAlignment(Qt::AlignLeft);
+    ui->passwordLineEdit->setEchoMode(QLineEdit::Password);
+    ui->passwordLineEdit->setStyleSheet(lineStyle);
+
+    // Login Button
+    ui->loginButton->setText(QString::fromUtf8("Đăng Nhập"));
+    ui->loginButton->setStyleSheet(buttonStyle);
+
+    // Status Label
+    ui->statusLabel->setVisible(false);
+    ui->statusLabel->setStyleSheet(QString("font-size: 14px; font-weight: bold;"));
 }
 
 MainWindow::~MainWindow()
@@ -99,23 +97,21 @@ void MainWindow::on_loginButton_clicked()
 {
     QString username = ui->usernameLineEdit->text();
     QString password = ui->passwordLineEdit->text();
+    QString successColor = "#6BBF59";
+    QString errorColor = "#FF6B6B";
 
     if(username == "test" && password == "test")
     {
-        QMessageBox::information(this, "Login", "Username and password is correct");
+//        ui->statusLabel->clear();
+//        ui->statusLabel->setVisible(false);
+        ui->statusLabel->setVisible(true);
+        ui->statusLabel->setStyleSheet(QString("color: %1;").arg(successColor));
+        ui->statusLabel->setText("Đăng nhập thành công!");
     }
     else
     {
-        QMessageBox::warning(this, "Login", "Username and password is incorrect");
+        ui->statusLabel->setVisible(true);
+        ui->statusLabel->setStyleSheet(QString("color: %1;").arg(errorColor));
+        ui->statusLabel->setText("Đăng nhập thất bại!");
     }
-}
-
-void MainWindow::on_registerButton_clicked()
-{
-
-}
-
-void MainWindow::on_forgotPasswordButton_clicked()
-{
-
 }
