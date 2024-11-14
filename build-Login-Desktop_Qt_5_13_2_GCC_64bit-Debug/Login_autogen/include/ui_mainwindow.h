@@ -12,6 +12,7 @@
 #include <QtCore/QVariant>
 #include <QtWidgets/QApplication>
 #include <QtWidgets/QGroupBox>
+#include <QtWidgets/QHBoxLayout>
 #include <QtWidgets/QLabel>
 #include <QtWidgets/QLineEdit>
 #include <QtWidgets/QMainWindow>
@@ -27,15 +28,17 @@ class Ui_MainWindow
 public:
     QWidget *centralwidget;
     QGroupBox *groupBox;
-    QVBoxLayout *verticalLayout_2;
-    QSpacerItem *verticalSpacer;
+    QHBoxLayout *horizontalLayout;
+    QSpacerItem *horizontalSpacer;
     QVBoxLayout *verticalLayout;
+    QSpacerItem *verticalSpacer;
     QLabel *loginLabel;
     QLineEdit *usernameLineEdit;
     QLineEdit *passwordLineEdit;
     QPushButton *loginButton;
     QLabel *statusLabel;
     QSpacerItem *verticalSpacer_2;
+    QSpacerItem *horizontalSpacer_2;
 
     void setupUi(QMainWindow *MainWindow)
     {
@@ -46,19 +49,23 @@ public:
         centralwidget->setObjectName(QString::fromUtf8("centralwidget"));
         groupBox = new QGroupBox(centralwidget);
         groupBox->setObjectName(QString::fromUtf8("groupBox"));
-        groupBox->setGeometry(QRect(400, 120, 168, 191));
-        verticalLayout_2 = new QVBoxLayout(groupBox);
-        verticalLayout_2->setObjectName(QString::fromUtf8("verticalLayout_2"));
-        verticalSpacer = new QSpacerItem(20, 40, QSizePolicy::Minimum, QSizePolicy::Expanding);
+        groupBox->setGeometry(QRect(230, 150, 541, 311));
+        horizontalLayout = new QHBoxLayout(groupBox);
+        horizontalLayout->setObjectName(QString::fromUtf8("horizontalLayout"));
+        horizontalSpacer = new QSpacerItem(40, 20, QSizePolicy::Expanding, QSizePolicy::Minimum);
 
-        verticalLayout_2->addItem(verticalSpacer);
+        horizontalLayout->addItem(horizontalSpacer);
 
         verticalLayout = new QVBoxLayout();
         verticalLayout->setObjectName(QString::fromUtf8("verticalLayout"));
+        verticalSpacer = new QSpacerItem(20, 40, QSizePolicy::Minimum, QSizePolicy::Expanding);
+
+        verticalLayout->addItem(verticalSpacer);
+
         loginLabel = new QLabel(groupBox);
         loginLabel->setObjectName(QString::fromUtf8("loginLabel"));
 
-        verticalLayout->addWidget(loginLabel, 0, Qt::AlignHCenter);
+        verticalLayout->addWidget(loginLabel);
 
         usernameLineEdit = new QLineEdit(groupBox);
         usernameLineEdit->setObjectName(QString::fromUtf8("usernameLineEdit"));
@@ -78,14 +85,18 @@ public:
         statusLabel = new QLabel(groupBox);
         statusLabel->setObjectName(QString::fromUtf8("statusLabel"));
 
-        verticalLayout->addWidget(statusLabel, 0, Qt::AlignHCenter);
-
-
-        verticalLayout_2->addLayout(verticalLayout);
+        verticalLayout->addWidget(statusLabel);
 
         verticalSpacer_2 = new QSpacerItem(20, 40, QSizePolicy::Minimum, QSizePolicy::Expanding);
 
-        verticalLayout_2->addItem(verticalSpacer_2);
+        verticalLayout->addItem(verticalSpacer_2);
+
+
+        horizontalLayout->addLayout(verticalLayout);
+
+        horizontalSpacer_2 = new QSpacerItem(40, 20, QSizePolicy::Expanding, QSizePolicy::Minimum);
+
+        horizontalLayout->addItem(horizontalSpacer_2);
 
         MainWindow->setCentralWidget(centralwidget);
 

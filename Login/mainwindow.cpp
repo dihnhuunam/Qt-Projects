@@ -11,7 +11,17 @@ MainWindow::MainWindow(QWidget *parent)
 {
     ui->setupUi(this);
 
-    // Layout
+    setupLayout();
+    setupStyles();
+}
+
+MainWindow::~MainWindow()
+{
+    delete ui;
+}
+
+void MainWindow::setupLayout()
+{
     QVBoxLayout *mainLayout = new QVBoxLayout();
     QHBoxLayout *horizontalLayout = new QHBoxLayout();
 
@@ -24,17 +34,20 @@ MainWindow::MainWindow(QWidget *parent)
     QWidget *centralWidget = new QWidget(this);
     centralWidget->setLayout(mainLayout);
     setCentralWidget(centralWidget);
+}
 
+void MainWindow::setupStyles()
+{
     // Dark theme colors
-    QString darkBackground = "#2B2B2B";
+    QString firstBackground = "#2B2B2B";
     QString secondaryBackground = "#3C3C3C";
     QString borderColor = "#5E5E5E";
     QString textColor = "#E0E0E0";
     QString hoverColor = "#4E4E4E";
     QString pressedColor = "#626262";
 
-    // Set main window background
-    this->setStyleSheet(QString("background-color: %1;").arg(darkBackground));
+    // Main window background
+    this->setStyleSheet(QString("background-color: %1;").arg(firstBackground));
 
     // StyleSheet for QLineEdit
     QString lineStyle = QString::fromUtf8("QLineEdit {"
@@ -86,11 +99,6 @@ MainWindow::MainWindow(QWidget *parent)
     ui->statusLabel->setVisible(false);
     ui->statusLabel->setStyleSheet(QString("font-size: 14px; font-weight: bold;"));
     ui->statusLabel->setAlignment(Qt::AlignCenter);
-}
-
-MainWindow::~MainWindow()
-{
-    delete ui;
 }
 
 void MainWindow::on_loginButton_clicked()

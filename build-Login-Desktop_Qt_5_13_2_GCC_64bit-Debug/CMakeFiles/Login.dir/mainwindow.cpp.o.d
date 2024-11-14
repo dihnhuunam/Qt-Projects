@@ -281,6 +281,12 @@ CMakeFiles/Login.dir/mainwindow.cpp.o: \
  /home/dihnhuunam/Qt5.13.2/5.13.2/gcc_64/include/QtWidgets/QGroupBox \
  /home/dihnhuunam/Qt5.13.2/5.13.2/gcc_64/include/QtWidgets/qgroupbox.h \
  /home/dihnhuunam/Qt5.13.2/5.13.2/gcc_64/include/QtWidgets/qframe.h \
+ /home/dihnhuunam/Qt5.13.2/5.13.2/gcc_64/include/QtWidgets/QHBoxLayout \
+ /home/dihnhuunam/Qt5.13.2/5.13.2/gcc_64/include/QtWidgets/qboxlayout.h \
+ /home/dihnhuunam/Qt5.13.2/5.13.2/gcc_64/include/QtWidgets/qlayout.h \
+ /home/dihnhuunam/Qt5.13.2/5.13.2/gcc_64/include/QtWidgets/qlayoutitem.h \
+ /home/dihnhuunam/Qt5.13.2/5.13.2/gcc_64/include/QtWidgets/qboxlayout.h \
+ /home/dihnhuunam/Qt5.13.2/5.13.2/gcc_64/include/QtWidgets/qgridlayout.h \
  /home/dihnhuunam/Qt5.13.2/5.13.2/gcc_64/include/QtWidgets/QLabel \
  /home/dihnhuunam/Qt5.13.2/5.13.2/gcc_64/include/QtWidgets/qlabel.h \
  /home/dihnhuunam/Qt5.13.2/5.13.2/gcc_64/include/QtWidgets/QLineEdit \
@@ -296,11 +302,6 @@ CMakeFiles/Login.dir/mainwindow.cpp.o: \
  /home/dihnhuunam/Qt5.13.2/5.13.2/gcc_64/include/QtWidgets/QSpacerItem \
  /home/dihnhuunam/Qt5.13.2/5.13.2/gcc_64/include/QtWidgets/qlayoutitem.h \
  /home/dihnhuunam/Qt5.13.2/5.13.2/gcc_64/include/QtWidgets/QVBoxLayout \
- /home/dihnhuunam/Qt5.13.2/5.13.2/gcc_64/include/QtWidgets/qboxlayout.h \
- /home/dihnhuunam/Qt5.13.2/5.13.2/gcc_64/include/QtWidgets/qlayout.h \
- /home/dihnhuunam/Qt5.13.2/5.13.2/gcc_64/include/QtWidgets/qlayoutitem.h \
- /home/dihnhuunam/Qt5.13.2/5.13.2/gcc_64/include/QtWidgets/qboxlayout.h \
- /home/dihnhuunam/Qt5.13.2/5.13.2/gcc_64/include/QtWidgets/qgridlayout.h \
  /home/dihnhuunam/Qt5.13.2/5.13.2/gcc_64/include/QtWidgets/QWidget \
  /home/dihnhuunam/Qt5.13.2/5.13.2/gcc_64/include/QtWidgets/qwidget.h \
  /home/dihnhuunam/Qt5.13.2/5.13.2/gcc_64/include/QtCore/QString \
