@@ -1,9 +1,7 @@
 #include "mainwindow.h"
 #include "./ui_mainwindow.h"
 #include <QString>
-#include <QMessageBox>
-#include <QVBoxLayout>
-#include <QHBoxLayout>
+#include <QtWidgets>
 
 MainWindow::MainWindow(QWidget *parent)
     : QMainWindow(parent)
@@ -22,25 +20,14 @@ MainWindow::~MainWindow()
 
 void MainWindow::setupLayout()
 {
-    QVBoxLayout *mainLayout = new QVBoxLayout();
-    QHBoxLayout *horizontalLayout = new QHBoxLayout();
 
-    ui->groupBox->setParent(nullptr);
-
-    horizontalLayout->addWidget(ui->groupBox);
-
-    mainLayout->addLayout(horizontalLayout);
-
-    QWidget *centralWidget = new QWidget(this);
-    centralWidget->setLayout(mainLayout);
-    setCentralWidget(centralWidget);
 }
 
 void MainWindow::setupStyles()
 {
     // Dark theme colors
     QString firstBackground = "#2B2B2B";
-    QString secondaryBackground = "#3C3C3C";
+    QString secondBackground = "#3C3C3C";
     QString borderColor = "#5E5E5E";
     QString textColor = "#E0E0E0";
     QString hoverColor = "#4E4E4E";
@@ -56,7 +43,7 @@ void MainWindow::setupStyles()
                                                 "border: 1px solid %2;"
                                                 "border-radius: 8px;"
                                                 "padding: 6px;"
-                                                "}").arg(secondaryBackground, borderColor, textColor);
+                                                "}").arg(secondBackground, borderColor, textColor);
 
     // StyleSheet for QPushButton
     QString buttonStyle = QString::fromUtf8(
@@ -72,12 +59,12 @@ void MainWindow::setupStyles()
                     "}"
                 "QPushButton:pressed {"
                     "background-color: %4;"
-                    "}").arg(secondaryBackground, borderColor, hoverColor, pressedColor, textColor);
+                    "}").arg(secondBackground, borderColor, hoverColor, pressedColor, textColor);
 
     // Login Label
     ui->loginLabel->setText(QString::fromUtf8("Đăng Nhập"));
     ui->loginLabel->setStyleSheet(QString("color: %1; font-size: 38px; font-weight: bold;").arg(textColor));
-    ui->loginLabel->setAlignment(Qt::AlignHCenter);
+    ui->loginLabel->setAlignment(Qt::AlignCenter);
 
     // Username LineEdit
     ui->usernameLineEdit->setPlaceholderText("Tài Khoản");
