@@ -9,6 +9,7 @@ MainWindow::MainWindow(QWidget *parent)
 {
     ui->setupUi(this);
     setupStyles();
+    setupLayout();
 }
 
 MainWindow::~MainWindow()
@@ -79,6 +80,30 @@ void MainWindow::setupStyles()
     ui->statusLabel->setVisible(false);
     ui->statusLabel->setStyleSheet(QString("font-size: 14px; font-weight: bold;"));
     ui->statusLabel->setAlignment(Qt::AlignCenter);
+}
+
+void MainWindow::setupLayout()
+{
+    QVBoxLayout *mainLayout = new QVBoxLayout();
+
+    QHBoxLayout *hLayout = new QHBoxLayout();
+    QVBoxLayout *contentLayout = new QVBoxLayout();
+
+    contentLayout->addWidget(ui->loginLabel);
+    contentLayout->addWidget(ui->usernameLineEdit);
+    contentLayout->addWidget(ui->passwordLineEdit);
+    contentLayout->addWidget(ui->loginButton);
+    contentLayout->addWidget(ui->statusLabel);
+
+    hLayout->addSpacerItem(new QSpacerItem(40, 20, QSizePolicy::Expanding, QSizePolicy::Minimum));
+    hLayout->addLayout(contentLayout);
+    hLayout->addSpacerItem(new QSpacerItem(40, 20, QSizePolicy::Expanding, QSizePolicy::Minimum));
+
+    mainLayout->addSpacerItem(new QSpacerItem(20, 40, QSizePolicy::Minimum, QSizePolicy::Expanding));
+    mainLayout->addLayout(hLayout);
+    mainLayout->addSpacerItem(new QSpacerItem(20, 40, QSizePolicy::Minimum, QSizePolicy::Expanding));
+
+    ui->centralwidget->setLayout(mainLayout);
 }
 
 void MainWindow::on_loginButton_clicked()
