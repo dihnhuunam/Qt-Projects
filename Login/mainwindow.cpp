@@ -8,19 +8,12 @@ MainWindow::MainWindow(QWidget *parent)
     , ui(new Ui::MainWindow)
 {
     ui->setupUi(this);
-
-    setupLayout();
     setupStyles();
 }
 
 MainWindow::~MainWindow()
 {
     delete ui;
-}
-
-void MainWindow::setupLayout()
-{
-
 }
 
 void MainWindow::setupStyles()
