@@ -1,39 +1,40 @@
 /* Mainwindow background */
 QMainWindow {
-    background-color: #2B2B2B;
+    background-color: #333;
+}
+
+/* QLabel style for the login label */
+QLabel#loginLabel {
+    color: #999;
+    font-size: 38px;
+    font-weight: bold;
 }
 
 /* QLineEdit style */
 QLineEdit {
-    background-color: #3C3C3C;
-    color: #E0E0E0;
-    border: 1px solid #5E5E5E;
+    background-color: #333;
+    color: #999;
+    border: 1px solid #999;
     border-radius: 8px;
     padding: 6px;
 }
 
 /* QPushButton style */
 QPushButton {
-    background-color: #3C3C3C;
-    color: #E0E0E0;
-    border: 1px solid #5E5E5E;
+    background-color: #333;
+    color: #999;
+    border: 1px solid #999;
     border-radius: 8px;
     padding: 6px;
 }
 
 QPushButton:hover {
-    background-color: #4E4E4E;
+    background-color: #999;
+    color: #333;
 }
 
 QPushButton:pressed {
     background-color: #626262;
-}
-
-/* QLabel style for the login label */
-QLabel#loginLabel {
-    color: #E0E0E0;
-    font-size: 38px;
-    font-weight: bold;
 }
 
 /* QLabel style for the status label */
