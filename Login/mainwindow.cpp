@@ -10,6 +10,7 @@ MainWindow::MainWindow(QWidget *parent)
     ui->setupUi(this);
     setupStyles();
     setupLayout();
+    setupConnections();
 }
 
 MainWindow::~MainWindow()
@@ -104,6 +105,12 @@ void MainWindow::setupLayout()
     mainLayout->addSpacerItem(new QSpacerItem(20, 40, QSizePolicy::Minimum, QSizePolicy::Expanding));
 
     ui->centralwidget->setLayout(mainLayout);
+}
+
+void MainWindow::setupConnections()
+{
+    connect(ui->usernameLineEdit, &QLineEdit::returnPressed, this, &MainWindow::on_loginButton_clicked);
+    connect(ui->passwordLineEdit, &QLineEdit::returnPressed, this, &MainWindow::on_loginButton_clicked);
 }
 
 void MainWindow::on_loginButton_clicked()

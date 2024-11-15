@@ -23,5 +23,6 @@ private:
 
     void setupStyles();
     void setupLayout();
+    void setupConnections();
 };
 #endif // MAINWINDOW_H
