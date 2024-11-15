@@ -116,16 +116,16 @@ void MainWindow::setupLayout()
     QVBoxLayout *mainLayout = new QVBoxLayout();
 
     QHBoxLayout *hLayout = new QHBoxLayout();
-    QVBoxLayout *contentLayout = new QVBoxLayout();
+    QVBoxLayout *vLayout = new QVBoxLayout();
 
-    contentLayout->addWidget(ui->loginLabel);
-    contentLayout->addWidget(ui->usernameLineEdit);
-    contentLayout->addWidget(ui->passwordLineEdit);
-    contentLayout->addWidget(ui->loginButton);
-    contentLayout->addWidget(ui->statusLabel);
+    vLayout->addWidget(ui->loginLabel);
+    vLayout->addWidget(ui->usernameLineEdit);
+    vLayout->addWidget(ui->passwordLineEdit);
+    vLayout->addWidget(ui->loginButton);
+    vLayout->addWidget(ui->statusLabel);
 
     hLayout->addSpacerItem(new QSpacerItem(40, 20, QSizePolicy::Expanding, QSizePolicy::Minimum));
-    hLayout->addLayout(contentLayout);
+    hLayout->addLayout(vLayout);
     hLayout->addSpacerItem(new QSpacerItem(40, 20, QSizePolicy::Expanding, QSizePolicy::Minimum));
 
     mainLayout->addSpacerItem(new QSpacerItem(20, 40, QSizePolicy::Minimum, QSizePolicy::Expanding));

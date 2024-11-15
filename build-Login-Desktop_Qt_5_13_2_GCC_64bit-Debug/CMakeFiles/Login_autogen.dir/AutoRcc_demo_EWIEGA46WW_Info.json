@@ -1,0 +1,20 @@
+{
+	"BUILD_DIR" : "/home/dihnhuunam/Workspace/Qt-Projects/build-Login-Desktop_Qt_5_13_2_GCC_64bit-Debug/Login_autogen",
+	"CMAKE_BINARY_DIR" : "/home/dihnhuunam/Workspace/Qt-Projects/build-Login-Desktop_Qt_5_13_2_GCC_64bit-Debug",
+	"CMAKE_CURRENT_BINARY_DIR" : "/home/dihnhuunam/Workspace/Qt-Projects/build-Login-Desktop_Qt_5_13_2_GCC_64bit-Debug",
+	"CMAKE_CURRENT_SOURCE_DIR" : "/home/dihnhuunam/Workspace/Qt-Projects/Login",
+	"CMAKE_SOURCE_DIR" : "/home/dihnhuunam/Workspace/Qt-Projects/Login",
+	"GENERATOR" : "Unix Makefiles",
+	"INCLUDE_DIR" : "/home/dihnhuunam/Workspace/Qt-Projects/build-Login-Desktop_Qt_5_13_2_GCC_64bit-Debug/Login_autogen/include",
+	"INPUTS" : [],
+	"LOCK_FILE" : "/home/dihnhuunam/Workspace/Qt-Projects/build-Login-Desktop_Qt_5_13_2_GCC_64bit-Debug/CMakeFiles/Login_autogen.dir/AutoRcc_demo_EWIEGA46WW_Lock.lock",
+	"MULTI_CONFIG" : false,
+	"OPTIONS" : [ "-name", "demo" ],
+	"OUTPUT_CHECKSUM" : "EWIEGA46WW",
+	"OUTPUT_NAME" : "qrc_demo.cpp",
+	"RCC_EXECUTABLE" : "/home/dihnhuunam/Qt5.13.2/5.13.2/gcc_64/bin/rcc",
+	"RCC_LIST_OPTIONS" : [ "--list" ],
+	"SETTINGS_FILE" : "/home/dihnhuunam/Workspace/Qt-Projects/build-Login-Desktop_Qt_5_13_2_GCC_64bit-Debug/CMakeFiles/Login_autogen.dir/AutoRcc_demo_EWIEGA46WW_Used.txt",
+	"SOURCE" : "/home/dihnhuunam/Workspace/Qt-Projects/Login/demo.qrc",
+	"VERBOSITY" : 0
+}
